@@ -1,0 +1,25 @@
+[project]
+name = "transcriber"
+version = "0.1.0"
+description = "Локальная транскрибация аудио с разделением по говорящим на GigaAM"
+requires-python = ">=3.10"
+dependencies = [
+    "torch",
+    "torchaudio",
+    # extra longform нужен для transcribe_longform: он тянет VAD (pyannote/segmentation-3.0).
+    # Коммит закреплён: разбор ответа в asr.py проверен именно на нём.
+    "gigaam[longform] @ git+https://github.com/salute-developers/GigaAM.git@559d88d6b72541412743929f633a6ae7c9950b85",
+    # Код рассчитан на 4.x: token= вместо use_auth_token=, DiarizeOutput вместо Annotation.
+    "pyannote.audio>=4.0,<5",
+    "fastapi",
+    "uvicorn[standard]",
+    "python-multipart",
+    "python-dotenv",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["backend", "backend.pipeline"]

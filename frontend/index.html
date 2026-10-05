@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Транскрибация</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <h1>Транскрибация</h1>
+    <div id="health" class="health"></div>
+  </header>
+
+  <main>
+    <aside>
+      <div id="drop" class="drop">
+        <strong>Перетащите аудио сюда</strong>
+        <span>или нажмите, чтобы выбрать файл</span>
+        <input type="file" id="file" accept="audio/*,video/*" multiple hidden>
+      </div>
+      <fieldset class="mode">
+        <legend>Для новых файлов</legend>
+        <label><input type="radio" name="diarize" value="true"> С разделением по говорящим</label>
+        <label><input type="radio" name="diarize" value="false"> Сплошной текст (быстрее)</label>
+      </fieldset>
+      <ul id="jobs" class="jobs"></ul>
+    </aside>
+
+    <section id="viewer" class="viewer">
+      <p class="empty">Выберите запись слева или загрузите новую.</p>
+    </section>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
