@@ -101,3 +101,7 @@ frontend/              одна страница, без сборки
 scripts/               смоук-тест и бенчмарк
 data/                  загрузки, wav, результаты, app.db
 ```
+
+## Лицензия
+
+Код — [MIT](LICENSE). Модели и библиотеки скачиваются отдельно и остаются под лицензиями своих авторов: GigaAM и `segmentation-3.0` — MIT, `speaker-diarization-community-1` — CC-BY-4.0. Подробности — в [THIRD_PARTY_LICENSES.md](THIRD_PARTY_LICENSES.md).
