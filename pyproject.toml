@@ -17,6 +17,10 @@ dependencies = [
     "python-dotenv",
 ]
 
+[project.optional-dependencies]
+# Окно приложения для macOS (backend/desktop.py, scripts/build_mac_app.py).
+mac = ["pywebview>=6"]
+
 [build-system]
 requires = ["setuptools>=68"]
 build-backend = "setuptools.build_meta"

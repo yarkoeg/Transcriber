@@ -293,7 +293,14 @@ function renderResult(job) {
   for (const fmt of ['txt', 'json']) {
     const button = document.createElement('button');
     button.textContent = `Скачать .${fmt}`;
-    button.onclick = () => window.location.assign(`/api/jobs/${job.id}/download?fmt=${fmt}`);
+    // Ссылка с download, а не переход по адресу: окно приложения (WKWebView)
+    // показывает text/plain у себя вместо интерфейса, а download — сохраняет файл.
+    button.onclick = () => {
+      const link = document.createElement('a');
+      link.href = `/api/jobs/${job.id}/download?fmt=${fmt}`;
+      link.download = '';
+      link.click();
+    };
     head.append(button);
   }
 
